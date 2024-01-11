@@ -5,6 +5,7 @@ import os
 
 load_dotenv()
 notion_api_key = os.getenv("NOTION_API_KEY")
+todo_view_id = os.getenv("TODO_VIEW_ID")
 
 notion = Client(auth=notion_api_key)
 
@@ -24,5 +25,5 @@ def get_random_task(database_id, status):
         return None
 
 
-random_task = get_random_task("todo", "To Solve")
+random_task = get_random_task(todo_view_id, "To Solve")
 print(random_task)
