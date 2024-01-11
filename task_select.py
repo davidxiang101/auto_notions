@@ -26,4 +26,4 @@ def get_random_task(database_id, status):
 
 
 random_task = get_random_task(todo_view_id, "To Solve")
-print(random_task)
+print(random_task["properties"]["Name"]["title"][0]["plain_text"])
