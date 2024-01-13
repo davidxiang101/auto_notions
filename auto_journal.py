@@ -11,14 +11,15 @@ notion = Client(auth=os.getenv("NOTION_API_KEY"))
 
 
 # Function to create a new journal entry
-def create_journal_entry(database_id, title):
+def create_journal_entry(database_id, title, icon_emoji="📓"):
     notion.pages.create(
         parent={"database_id": database_id},
         properties={
             "Name": {"title": [{"text": {"content": title}}]},
             # Add other properties here if needed
         },
-        # You can add additional content to the page here
+        icon={"type": "emoji", "emoji": icon_emoji},
+        # Additional content can be added here
     )
 
 
