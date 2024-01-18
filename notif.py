@@ -23,7 +23,7 @@ def find_upcoming_due_dates(database_id, days_ahead=3):
                 "filter": {
                     "and": [
                         {
-                            "property": "Due Date",  # Replace with your actual date property name
+                            "property": "Due date",
                             "date": {"on_or_before": formatted_date},
                         }
                     ]
@@ -33,7 +33,7 @@ def find_upcoming_due_dates(database_id, days_ahead=3):
 
         tasks = response.get("results", [])
         for task in tasks:
-            due_date = task["properties"]["Due Date"]["date"]["start"]
+            due_date = task["properties"]["Due date"]["date"]["start"]
             task_name = task["properties"]["Name"]["title"][0]["plain_text"]
             print(f"Task '{task_name}' is due by {due_date}")
 
@@ -42,4 +42,4 @@ def find_upcoming_due_dates(database_id, days_ahead=3):
 
 
 # Replace 'your_database_id' with your actual database ID
-find_upcoming_due_dates(os.getenv("YOUR_DATABASE_ID"))
+find_upcoming_due_dates(os.getenv("SCHOOL_VIEW_ID"))
