@@ -42,4 +42,4 @@ def find_upcoming_due_dates(database_id, days_ahead=3):
 
 
 # Replace 'your_database_id' with your actual database ID
-find_upcoming_due_dates(os.getenv("SCHOOL_VIEW_ID"))
+find_upcoming_due_dates(os.getenv("SCHOOL_VIEW_ID"), days_ahead=1)
